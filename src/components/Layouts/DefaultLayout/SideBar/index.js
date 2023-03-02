@@ -1,5 +1,14 @@
-function Header() {
-  return ( <h2>Header!</h2> );
+import styles from './SideBar.module.scss'
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles)
+
+function SideBar() {
+  return (
+    <aside className = { cx('wrapper')}>
+      <h2>SideBar!</h2>
+    </aside>
+  );
 }
 
-export default Header;
+export default SideBar;
