@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px 0 20px
+  padding: 0 24px 0 20px;
 }
 
 .search,
@@ -102,6 +102,22 @@
   align-items: center;
 }
 
+.action-btn {
+  background-color: transparent;
+  font-size: 2.2rem;
+  color: #161823;
+  padding: 4px 12px;
+}
+
+.user-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-left: 24px;
+  cursor: pointer;
+}
+
 .more-btn {
   background-color: transparent;
   font-size: 2rem;
@@ -110,4 +126,3 @@
   margin-left: 20px;
   cursor: pointer;
 }
-

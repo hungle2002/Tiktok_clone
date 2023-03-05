@@ -1,10 +1,10 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600&display=swap");
 
 :root {
   --primary: #fe2c55;
   --black: #000;
-  --text-color: #333;
+  --text-color: #161823;
   --white: #fff;
 
   // default layout
@@ -42,4 +42,21 @@ a[href] {
   text-decoration: none;
 }
 
+// custom global tippy
+body {
+  .tippy-box {
+    background-color: #545454be;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 22px;
+  }
 
+  .tippy-arrow {
+    color: #545454be;
+  }
+
+  .tippy-content {
+    padding: 8px 9px;
+  }
+}

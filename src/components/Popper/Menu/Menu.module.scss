@@ -9,8 +9,12 @@
     width: 100%;
     justify-content: flex-start;
     border-radius: 0px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
+
+    &.separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
 
     &:hover {
       background: rgba(22, 24, 35, 0.03);
