@@ -21,10 +21,26 @@ import Button from "../../../Button";
 import Menu from "../../../Popper/Menu";
 
 const cx = classNames.bind(styles);
+
 const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: "English",
+    children: {
+      title: "Language",
+      data: [
+        {
+          type: "language",
+          code: "vi",
+          title: "Vietnamese",
+        },
+        {
+          type: "language",
+          code: "en",
+          title: "English",
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faQuestionCircle} />,
@@ -36,6 +52,17 @@ const MENU_ITEMS = [
     title: "Keyboard shortcuts",
   },
 ];
+
+// handle logic
+const handleMenuChange = (menuItem) => {
+  switch (menuItem.type) {
+    case "language":
+      // handlechange
+      break;
+    default:
+  }
+};
+
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
 
@@ -88,7 +115,7 @@ function Header() {
           </Button>
           <Button primary>Log in</Button>
 
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx("more-btn")}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>

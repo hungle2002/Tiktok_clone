@@ -1,11 +1,11 @@
 //Menu wrapper
 .menu-items {
   width: 224px;
-
+  // Menu items
   .menu-item {
     margin-left: 0px;
     padding: 10px 16px;
-    text-decoration: none;
+    line-height: 1.6rem;
     width: 100%;
     justify-content: flex-start;
     border-radius: 0px;
@@ -20,4 +20,24 @@
 
 .menu-popper {
   padding-bottom: 8px;
+}
+
+// header css
+.header {
+  margin-top: -8px;
+  position: relative;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-btn {
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
 }
