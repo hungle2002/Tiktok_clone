@@ -6,6 +6,7 @@
   min-width: 100px;
   border-radius: 4px;
   font-weight: 700;
+  font-family: "ProximaNova", sans-serif;
   font-size: 1.6rem;
   background-color: var(--white);
   cursor: pointer;
@@ -23,11 +24,12 @@
 }
 
 // config icon
-.icon + .title, .title + .icon{
+.icon + .title,
+.title + .icon {
   margin-left: 8px;
 }
 
-.icon{
+.icon {
   display: inline-block;
   text-align: center;
   width: 20px;
@@ -72,7 +74,7 @@
 .outline {
   color: var(--primary);
   border-color: currentColor;
-  
+
   &:hover {
     border-color: currentColor;
     background-color: rgba(254, 44, 85, 0.06);

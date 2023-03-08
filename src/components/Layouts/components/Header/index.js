@@ -7,15 +7,8 @@ import {
   faMagnifyingGlass,
   faPlus,
   faSpinner,
-  faEarthAsia,
-  faQuestionCircle,
-  faKeyboard,
-  faCloudUpload,
-  faUser,
   faCoins,
-  faGear,
   faMoon,
-  faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import Headless from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
@@ -26,12 +19,23 @@ import { Wrapper as PopperWrapper } from "../../../Popper";
 import AccountItem from "../../../AccountItem";
 import Button from "../../../Button";
 import Menu from "../../../Popper/Menu";
+import {
+  Messages,
+  Inbox,
+  Profile,
+  Setting,
+  English,
+  Feedback,
+  Keyboard,
+  Logout,
+} from "../../../icons";
+import Image from "../../../Image";
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
   {
-    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    icon: <English />,
     title: "English",
     children: {
       title: "Language",
@@ -50,12 +54,12 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <FontAwesomeIcon icon={faQuestionCircle} />,
+    icon: <Feedback />,
     title: "Feedback and Help",
     to: "/feedback",
   },
   {
-    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    icon: <Keyboard />,
     title: "Keyboard shortcuts",
   },
 ];
@@ -84,7 +88,7 @@ function Header() {
   // set menu when user login
   const userMenu = [
     {
-      icon: <FontAwesomeIcon icon={faUser} />,
+      icon: <Profile />,
       title: "View Profile",
       to: "/hungle",
     },
@@ -94,7 +98,7 @@ function Header() {
       to: "/coin",
     },
     {
-      icon: <FontAwesomeIcon icon={faGear} />,
+      icon: <Setting />,
       title: "Setting",
       to: "/setting",
     },
@@ -105,7 +109,7 @@ function Header() {
       to: "/setting",
     },
     {
-      icon: <FontAwesomeIcon icon={faSignOut} />,
+      icon: <Logout />,
       title: "Log out",
       to: "/logout",
       separate: true,
@@ -150,19 +154,24 @@ function Header() {
         </Headless>
 
         <div className={cx("action")}>
+          <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+            Upload
+          </Button>
           {currentUser ? (
             <>
-              <Tippy delay={[0, 300]} content="Upload video" placement="bottom">
+              <Tippy delay={[0, 300]} content="Messages" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <Messages className="" />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 300]} content="Inbox" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <Inbox className="" />
                 </button>
               </Tippy>
             </>
           ) : (
             <>
-              <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
-                Upload
-              </Button>
               <Button primary>Log in</Button>
             </>
           )}
@@ -172,10 +181,11 @@ function Header() {
           >
             {currentUser ? (
               <div>
-                <img
-                  src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/af92991e8ef8dfb93a0dadc167ff8f82~c5_100x100.jpeg?x-expires=1678204800&x-signature=d%2BnwBawo%2BxH%2BFvBbbJK%2FLtlVRfw%3D"
+                <Image
+                  src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/5e37ff4da73ba2fad83dd7728cfee477~c5_100x100.jpeg?x-expires=1678460400&x-signature=N96z0ilFJcpiczfuHZ%2BlS104f00%3D"
                   alt="avatar"
                   className={cx("user-avatar")}
+                  fallBack="https://vtv1.mediacdn.vn/thumb_w/650/2022/9/20/18-maguire-1663660369116981603469-crop-16636603735531227908950-crop-16751738899741999117299.jpg"
                 />
               </div>
             ) : (
