@@ -10,6 +10,7 @@ import AccountItem from "../../../AccountItem";
 import classNames from "classnames/bind";
 import styles from "./Search.module.scss";
 import { Wrapper as PopperWrapper } from "../../../Popper";
+import { useDebounce } from "../../../../hooks";
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +19,9 @@ function Search() {
   const [searchText, setSearchText] = useState("");
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  // set debounce 500ms for typing
+  const deBounceValue = useDebounce(searchText, 500)
 
   const inputRef = useRef();
 
@@ -34,14 +38,14 @@ function Search() {
 
   // not show popper
   useEffect(() => {
-    if (!searchText.trim()) {
+    if (!deBounceValue.trim()) {
       setSearchResult([]);
       return;
     }
     setLoading(true);
     fetch(
       `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-        searchText
+        deBounceValue
       )}&type=less`
     )
       .then((result) => result.json())
@@ -50,7 +54,7 @@ function Search() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [searchText]);
+  }, [deBounceValue]);
 
   return (
     <Headless
