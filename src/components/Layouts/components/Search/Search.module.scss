@@ -19,6 +19,7 @@
     font-size: 1.6rem;
     caret-color: var(--primary);
     background-color: transparent;
+    font-family: var(--font-family);
   }
 
   &:focus-within {
@@ -56,15 +57,15 @@
   color: rgba(22, 24, 35, 0.34);
 }
 
-.loading{
+.loading {
   animation: spinner 1s linear infinite;
 }
 
 @keyframes spinner {
-  from{
+  from {
     transform: translateY((-50%)) rotate(0deg);
   }
-  to{
+  to {
     transform: translateY((-50%)) rotate(360deg);
   }
 }

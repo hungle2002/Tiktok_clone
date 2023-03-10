@@ -4,27 +4,28 @@ import Upload from "../pages/Upload";
 import Search from "../pages/Search";
 import Profile from "../pages/Profile";
 import { HeaderOnly } from "../components/Layouts";
+import routes from "../config/routes";
 
 const puplicRoutes = [
   {
-    path: "/",
+    path: routes.home,
     component: Home,
   },
   {
-    path: "/following",
+    path: routes.following,
     component: Following,
   },
   {
-    path: "/:nickname",
+    path: routes.profile,
     component: Profile,
   },
   {
-    path: "/upload",
+    path: routes.upload,
     component: Upload,
     layout: HeaderOnly,
   },
   {
-    path: "/search",
+    path: routes.search,
     component: Search,
     layout: null,
   },

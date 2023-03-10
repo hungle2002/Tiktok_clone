@@ -20,10 +20,14 @@
   padding: 0 24px 0 20px;
 }
 
+.logo{
+  display: flex;
+}
+
 .badges {
   position: absolute;
-  top: 8px;
-  right: 224px;
+  top: -3px;
+  right:0px;
   padding: 0px 6px;
   height: 2rem;
   line-height: 2rem;
@@ -31,7 +35,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--white);
-  font-family: "ProximaNova", sans-serif;
+  font-family: var(--font-family);
   background-color: var(--primary);
 }
 
@@ -41,6 +45,7 @@
 }
 
 .action-btn {
+  position: relative;
   background-color: transparent;
   font-size: 2.2rem;
   color: #161823;

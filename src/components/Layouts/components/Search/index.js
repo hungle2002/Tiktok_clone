@@ -37,6 +37,15 @@ function Search() {
     setShowResult(false);
   };
 
+  const handleInput = (e) => {
+    const searchValue = e.target.value;
+    // check search value is valid (not start with space)
+    if (!searchValue.startsWith(" ")) {
+      setSearchText(searchValue);
+    }
+  };
+
+
   // not show popper
   useEffect(() => {
     if (!deBounceValue.trim()) {
@@ -81,9 +90,7 @@ function Search() {
           placeholder="Search accounts and videos..."
           spellCheck={false}
           value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
+          onChange={handleInput}
           onFocus={() => {
             setShowResult(true);
           }}
@@ -97,7 +104,7 @@ function Search() {
         {loading && (
           <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
         )}
-        <button className={cx("search-btn")}>
+        <button className={cx("search-btn")} onMouseDown = { (e) =>e.preventDefault() }>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>
