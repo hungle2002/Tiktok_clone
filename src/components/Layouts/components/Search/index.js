@@ -11,6 +11,7 @@ import classNames from "classnames/bind";
 import styles from "./Search.module.scss";
 import { Wrapper as PopperWrapper } from "../../../Popper";
 import { useDebounce } from "../../../../hooks";
+import * as searchService from "../../../../apiServices/searchService";
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +22,7 @@ function Search() {
   const [loading, setLoading] = useState(false);
 
   // set debounce 500ms for typing
-  const deBounceValue = useDebounce(searchText, 500)
+  const deBounceValue = useDebounce(searchText, 500);
 
   const inputRef = useRef();
 
@@ -42,18 +43,20 @@ function Search() {
       setSearchResult([]);
       return;
     }
-    setLoading(true);
-    fetch(
-      `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-        deBounceValue
-      )}&type=less`
-    )
-      .then((result) => result.json())
-      .then((items) => {
-        setSearchResult(items.data);
+
+    const fetchApi = async () => {
+      try {
+        setLoading(true);
+
+        const response = await searchService.search(deBounceValue);
+        setSearchResult(response);
+
         setLoading(false);
-      })
-      .catch(() => setLoading(false));
+      } catch (error) {
+        setLoading(false);
+      }
+    };
+    fetchApi();
   }, [deBounceValue]);
 
   return (
