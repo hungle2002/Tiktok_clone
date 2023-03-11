@@ -45,7 +45,6 @@ function Search() {
     }
   };
 
-
   // not show popper
   useEffect(() => {
     if (!deBounceValue.trim()) {
@@ -104,7 +103,10 @@ function Search() {
         {loading && (
           <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
         )}
-        <button className={cx("search-btn")} onMouseDown = { (e) =>e.preventDefault() }>
+        <button
+          className={cx("search-btn")}
+          onMouseDown={(e) => e.preventDefault()}
+        >
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>

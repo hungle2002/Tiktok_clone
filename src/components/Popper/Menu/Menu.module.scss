@@ -36,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 .back-btn {
   width: 50px;
@@ -44,4 +45,8 @@
   cursor: pointer;
   position: absolute;
   left: 0;
+}
+
+.menu-scrollable {
+  overflow-y: auto;
 }

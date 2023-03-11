@@ -46,6 +46,76 @@ const MENU_ITEMS = [
           code: "en",
           title: "English",
         },
+        {
+          type: "language",
+          code: "spa",
+          title: "Spanish",
+        },
+        {
+          type: "language",
+          code: "por",
+          title: "Portuguese",
+        },
+        {
+          type: "language",
+          code: "jp",
+          title: "Japanese",
+        },
+        {
+          type: "language",
+          code: "china",
+          title: "Chinese",
+        },
+        {
+          type: "language",
+          code: "tur",
+          title: "Turkish",
+        },
+        {
+          type: "language",
+          code: "kor",
+          title: "Korean",
+        },
+        {
+          type: "language",
+          code: "ita",
+          title: "Italian",
+        },
+        {
+          type: "language",
+          code: "fre",
+          title: "French",
+        },
+        {
+          type: "language",
+          code: "russ",
+          title: "Russian",
+        },
+        {
+          type: "language",
+          code: "mara",
+          title: "Marathi",
+        },
+        {
+          type: "language",
+          code: "ben",
+          title: "Bengali",
+        },
+        {
+          type: "language",
+          code: "mchi",
+          title: "Mandarin Chinese",
+        },
+        {
+          type: "language",
+          code: "por",
+          title: "Portuguese",
+        },
+        {
+          type: "language",
+          code: "ychine",
+          title: "Yue Chinese",
+        },
       ],
     },
   },

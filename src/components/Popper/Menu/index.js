@@ -41,7 +41,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       delay={[0, 1000]}
       interactive={true}
       placement="bottom-end"
-      hideOnClick= {false}
+      hideOnClick={false}
       render={(attrs) => (
         <div className={cx("menu-items")} tabIndex={-1}>
           <PopperWrapper className={cx("menu-popper")}>
@@ -51,7 +51,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                 onBack={() => setHistory(history.slice(0, -1))}
               />
             )}
-            {renderItems()}
+            <div className={cx("menu-scrollable")}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
