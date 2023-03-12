@@ -11,7 +11,7 @@ import classNames from "classnames/bind";
 import styles from "./Search.module.scss";
 import { Wrapper as PopperWrapper } from "../../../Popper";
 import { useDebounce } from "../../../../hooks";
-import * as searchService from "../../../../apiServices/searchService";
+import * as searchService from "../../../../services/searchService";
 
 const cx = classNames.bind(styles);
 

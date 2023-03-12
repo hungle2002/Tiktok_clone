@@ -25,7 +25,7 @@ import {
 } from "../../../icons";
 import Image from "../../../Image";
 import Search from "../Search";
-import routeconfig from "../../../../config/routes";
+import config from "../../../../config";
 
 const cx = classNames.bind(styles);
 
@@ -177,7 +177,7 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <Link to={routeconfig.home} className={cx("logo")}>
+        <Link to={config.routes.home} className={cx("logo")}>
           <img src={images.logo} alt="tiktok logo" />
         </Link>
         <div>
