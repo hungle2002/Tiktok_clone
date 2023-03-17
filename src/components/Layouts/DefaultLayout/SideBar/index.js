@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './SideBar.module.scss'
 import classNames from 'classnames/bind';
 
