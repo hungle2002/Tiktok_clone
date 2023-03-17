@@ -36,6 +36,14 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     });
   };
 
+  const handleReturnToFirstPage = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+
+  const handleReturnBack = () => {
+    setHistory(history.slice(0, -1));
+  };
+
   return (
     <Tippy
       offset={[12, 6]}
@@ -47,16 +55,13 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <div className={cx("menu-items")} tabIndex={-1}>
           <PopperWrapper className={cx("menu-popper")}>
             {history.length > 1 && (
-              <Header
-                title={current.title}
-                onBack={() => setHistory(history.slice(0, -1))}
-              />
+              <Header title={current.title} onBack={handleReturnBack} />
             )}
             <div className={cx("menu-scrollable")}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
-      onHide={() => setHistory((prev) => prev.slice(0, 1))}
+      onHide={handleReturnToFirstPage}
     >
       {children}
     </Tippy>
